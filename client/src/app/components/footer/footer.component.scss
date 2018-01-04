@@ -1,0 +1,86 @@
+ .footer {
+    width:75%;
+    padding-top:5%;
+    padding-bottom:2%;
+    margin: 0 auto;
+
+    p {
+        font-size:30px;
+        color:white;
+        font-family: 'Open Sans Condensed',sans-serif;
+        
+        &.firstP {
+            margin-bottom:30%;
+        }
+
+        &.lastP {
+            margin-bottom:10%;
+        }
+
+        a {
+            color:rgb(255, 255, 255);
+            text-decoration:none;
+        }
+
+
+    }
+
+    form  {
+        display:flex;
+
+        input, textarea {
+            background-color: rgba(255, 255, 255, 0.35);
+            font: normal normal normal 16px/1.4em 'Open Sans Condensed',sans-serif;
+            border: none;
+            color: #FFFFFF;
+            margin: 0 3px 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            width:100%;
+       }
+
+       textarea {
+            resize: none;
+            height:95%;
+       }
+
+       input[type='submit'] {
+            background-color:rgba(202, 229, 175, 0.5);
+            border:none;
+            color:white;
+            float:right;
+            width:40%;
+       }
+    }
+
+    .row {
+        div {
+            margin-bottom: 5%;
+        }
+
+        h3.text-center {
+            color:rgb(255, 255, 255);
+        }
+    }
+
+    p a i {
+        height:43px;
+        width:43px;
+        margin:2px;
+        display:inline-block;
+
+        &.vk {
+            background-image: url('../../../assets/images/icons/vk-footer.png');
+        }
+
+        &.insta {
+            background-image: url('../../../assets/images/icons/insta-footer.png');
+        }
+
+        &.fb {
+            background-image: url('../../../assets/images/icons/fb-footer.png');
+        }
+    }
+}
+

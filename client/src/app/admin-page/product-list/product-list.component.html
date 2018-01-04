@@ -1,0 +1,31 @@
+
+<div class="container">
+  <h2>List of Products</h2>
+  <p>
+      <button class="btn btn-primary" (click)="createProduct()">Create</button>
+      <button class="btn btn-default" (click)="refresh()">Refresh</button>
+    </p>
+    <table class="table table-striped">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>
+         <img src="http://localhost:3000/{{product.productImage}}" width='75px' >  
+        </td>
+        <td>
+          {{product.name}}
+        </td>
+        <td>
+          {{product.price}}
+        </td>
+        <td>
+          <button class="btn btn-default" (click)="editProduct(product)">Edit</button>
+          <button class="btn btn-default" (click)="deleteProduct(product)">Delete</button>
+        </td>
+      </tr>
+    </table>
+</div>

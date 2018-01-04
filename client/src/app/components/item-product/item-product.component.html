@@ -1,0 +1,37 @@
+
+<div class="container same-container" *ngIf="currentProduct">
+  <div class="row nav-in-same-page">
+      <div class="col-md-6">
+          <a routerLink="/">Главная</a> /  <a routerLink="/store">МАГАЗИН</a> / <a href="classic500.html" class="lastA">Арахісова паста Классическая 500г</a>
+      </div>
+      <div class="col-md-6 right" >
+      <a  ><span class="glyphicon glyphicon-chevron-left glyph"></span> Назад</a> | <a >Вперед <span class="glyphicon glyphicon-chevron-right glyph"></span></a> 
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6  same-bought">
+          <img src="http://localhost:3000/{{currentProduct?.productImage}}" alt="...">
+          
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 same-bought">
+          <p >{{currentProduct?.name}}</p>
+          <p class="article">Артикул: 0001  (fix it)</p>
+          <p >₴{{currentProduct?.price}}</p>
+
+          <a class="btn btn-default btn-lg">Додати до кошика</a>
+      </div>
+  </div>
+  <div class="row">
+
+      <div class="desc col-md-6 ">
+          <p class="first">Склад: смажений арахіс, цукор, сіль. </p>
+          <p>Енергетична цінність: 620,3 ккал</p>
+          <p>100г продукту містить: Білки - 29,2г ,  Жири - 50,2г , Вугдеводи - 13,8г</p>
+          <p>Kлассична арахісова паста містить в собі свіжообсмажений арахіс, цукор та сіль. Вона солодша за классичний американський варіант, та є більш адаптованою під наші з вами смаки. Классична арахісова паста стане чудовим варіантом сніданку, якщо її поєднати із свіжим хлібом або тостом та улюбленими фруктами. Такий сніданок буде не лише смачним, а й корисним. Підходить для вегетаріанців та веганів.</p>
+          <p>З чим куштувати? Крекери, тости, хліб, фрукти, круасани, печиво.</p>
+      </div>
+  </div>
+</div>
+
+
+<nut-footer></nut-footer>

@@ -1,0 +1,10 @@
+<div class='container' *ngIf="currentProduct">
+  <p>Вы собираетесь удалить следующую запись:</p>
+  <p>
+    <img src="http://localhost:3000/{{currentProduct?.productImage}}" width='75px'> </p>
+  <p>Name: {{currentProduct?.name}}</p>
+  <p>Price: {{currentProduct?.price}}</p>
+
+  <button class="btn btn-default" (click)="goBack()">Cancel</button>
+  <button class="btn btn-primary" (click)="deleteProduct()">Delete</button>
+</div>

@@ -1,0 +1,42 @@
+:host {
+    display: block;
+    background-image: url('../../../assets/images/about_us/bg-magazin.jpg');
+}
+
+
+.about-us {
+    padding-top: 10%;
+    background-color:rgba(0,0,0,0);
+}
+
+.about-us p {
+   font-size:25px;
+   color:#fff;
+   font-family:'Open Sans Condenced',sans-serif;
+   width:90%;
+   margin:2% auto;
+
+}
+
+.about-us .line {
+   height:2px;
+   width:50%;
+   background-color:white; 
+   margin:auto;
+   margin-bottom:3%;
+}
+
+.same-container {
+    width:65%;
+}
+
+.same-bought img {
+    height:60%;
+    width:100%;
+}
+ .same-bought p {
+   
+    color:#E8E6E6;
+    font: normal normal normal 38px/47px "Open Sans Condensed",sans-serif;
+    margin-bottom:5%;
+}

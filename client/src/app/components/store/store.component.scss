@@ -1,0 +1,31 @@
+
+:host {
+    display: block;
+    background-image: url('../../../assets/images/bg-store.jpg');
+}
+
+.container {
+    margin-top:10%;
+    background-color:rgba(0,0,0,0.5);
+    width:75%;
+}
+
+.bought {
+    text-align: center;
+}
+
+.bought a {
+     text-decoration:none;
+}
+.bought img {
+    height:60%;
+    width:100%;
+}
+ .bought p {   
+    color: rgba(255, 255, 255, .7);
+    font: normal normal normal 27px/33px "Open Sans Condensed",sans-serif;
+}
+
+
+ 
+

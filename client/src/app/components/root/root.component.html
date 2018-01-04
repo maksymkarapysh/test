@@ -1,0 +1,61 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<router-outlet></router-outlet>
+
+
+<nut-sticky-header (makeVisibleBasket)="toggleBasket($event)"></nut-sticky-header> 
+
+<!-- <nut-basket [visible]="visibleBasket" ></nut-basket> -->
+
+
+<div class="basket-window" *ngIf="visibleBasket" (click)="closeBasket($event)">
+    <div class="basket-window-fix">
+        <div class="basket-window-fix-header">
+            <i class="glyphicon glyphicon-chevron-right close-basket" (click)="toggleBasket(false)"></i><span>Кошик</span>
+        </div>
+  
+        <div class="container-fluid product">
+            <div class="row block-with-product">
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                    <a href="classic500.html"> <img src="../../../assets/images/Классическая-500.png" alt="Alternate Text" /></a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 item-info">
+                    <p class="item-name">Арахісова паста Класична 500г</p>
+                    <p class="item-quantity">КОЛИЧЕСТВО: 1</p>
+                    <p class="item-price">₴90</p>
+                </div>
+                <div>
+                    <i class="glyphicon glyphicon-remove"></i>
+                </div>
+            </div>
+  
+            <div class="row block-with-product">
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                    <a href="#">   <img src="../../../assets/images/Классическая-500.png" alt="Alternate Text" /></a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-5 item-info">
+                    <p class="item-name">Арахісова паста Нейтральна 250г</p>
+                    <p class="item-quantity">КОЛИЧЕСТВО: 1</p>
+                    <p class="item-price">₴60</p>
+                </div>
+                <div>
+                    <i class="glyphicon glyphicon-remove"></i>
+                </div>
+            </div>
+  
+            <div class="basket-window-fix-footer">
+                <div class="basket-footer-summary">
+                    <p>Сумма</p>
+                    <p>₴180</p>
+                </div>
+                <div class="row basket-footer-anchor">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <a href="basket.html" class="btn btn-default btn-lg">Перейти до кошику</a>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+  
+    </div>
+  </div>

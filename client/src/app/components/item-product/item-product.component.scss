@@ -1,0 +1,81 @@
+:host {
+    display: block;
+    background-image: url('../../../assets/images/bg-store.jpg');
+    padding-top: 20vh;
+}
+
+.same-container {
+    width:65%;
+    
+    background-color:rgba(0,0,0,0.5);
+}
+
+.same-bought img {
+    height:60%;
+    width:100%;
+}
+ .same-bought p {
+   
+    color:#E8E6E6;
+    font: normal normal normal 38px/47px "Open Sans Condensed",sans-serif;
+    margin-bottom:5%;
+}
+
+ .same-bought p.article {
+     color:rgba(255,255,255,0.5);
+     font: normal normal normal 19px/23px "Open Sans Condensed",sans-serif;
+ }
+
+
+ .same-bought a {
+    background-color:rgba(202, 229, 175, 0.5);
+    border:none;
+    color:rgba(255, 255, 255,0.8);
+    padding:4% 10%;
+    display:inline-block;
+    margin:0 auto;
+    
+    
+}
+
+.same-bought a:hover {
+    background-color:rgba(202, 229, 175, 0.2);
+    color:rgba(255, 255, 255,0.3);
+}
+
+
+.desc p{
+
+    margin-top:30px;
+    color: #E8E6E6;
+    font: normal normal normal 25px/31px "Open Sans Condensed",sans-serif;
+    line-height:1.5;
+}
+
+.desc p.first {
+    margin-top:0;
+}
+
+.nav-in-same-page {
+    font: normal normal normal 25px/31px "Open sans Condensed",sans-serif;
+    color:#E8E6E6;
+    margin-top:3%;
+    margin-bottom:5%;
+}
+
+.nav-in-same-page a  {
+    text-decoration:none;
+    color:#E8E6E6;
+}
+
+.nav-in-same-page a.lastA {
+    opacity:0.5;
+}
+
+.nav-in-same-page .glyph {
+    font-size:20px;
+}
+
+.nav-in-same-page .right {
+    text-align:right;
+}

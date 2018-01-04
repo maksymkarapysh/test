@@ -1,0 +1,103 @@
+.main-top-bg {
+    width: 100%;
+}
+
+.main {
+    height: 730px;
+    background-image: url('../../../assets/images/bg-read-more.jpg');
+    background-size:cover;
+
+    .row {
+        height: 100%;
+
+        .col-md-6 {
+            background-color: rgba(0, 0, 0, 0.5);
+            height:100%;
+            padding:12% 5%;
+            color:#E8E6E6;
+            font-size: 25px;
+            line-height: 2em;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        h1 {
+            margin-bottom:5%;
+        }
+
+        p {
+            width:75%;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        button {
+            background-color: rgba(255, 255, 255, 0.45);
+            border:none;
+            color:white;
+
+            &:hover {
+                    background-color:rgba(202, 229, 175, 0.5);
+            }
+        }
+    }
+}
+
+.section {
+    background-color:#090808;
+    /*height:1000px;*/
+    width:100%;
+    padding-top:10%;
+}
+
+.section .row-most-bought {
+    margin-top:30px;
+    margin-bottom:45px;
+}
+
+.section h2 {
+    
+    color:#E8E6E6;
+    font-size:50px;
+}
+
+
+.section .bought {
+    /*height:600px;*/
+    text-align: center;
+    
+}
+
+
+.section .bought img {
+    height:60%;
+    width:100%;
+}
+
+.section .bought p {
+    color:rgb(255, 255, 255);
+    font-family: 'Open Sans Condensed',sans-serif;
+    
+}
+
+.section .bought .bought__description {
+  font-size: 25px;
+}
+
+.section .bought .bought__price {
+  font-size: 28px;
+}
+
+.section .bought a {
+    background-color:rgba(202, 229, 175, 0.5);
+    border:none;
+    color:rgba(255, 255, 255,0.8);
+    padding:4% 10%;
+    display:inline-block;
+    margin:0 auto;
+    
+    
+}
+
+.section .bought a:hover {
+    background-color:rgba(202, 229, 175, 0.2);
+    color:rgba(255, 255, 255,0.3);
+}
