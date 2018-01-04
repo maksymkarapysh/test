@@ -16,6 +16,7 @@ import { ProductService } from './shared/product.service';
 import { StoreComponent } from './components/store/store.component';
 import { ItemProductComponent } from './components/item-product/item-product.component';
 import { BasketComponent } from './components/basket/basket.component';
+import { BasketService } from './shared/basket.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { BasketComponent } from './components/basket/basket.component';
     HttpClientModule,
     NgxPageScrollModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, BasketService],
   bootstrap: [RootComponent]
 })
 export class AppModule { }

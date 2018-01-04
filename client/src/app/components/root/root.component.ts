@@ -16,7 +16,6 @@ export class RootComponent {
   }
 
   closeBasket(event) {
-    console.log(event);
     if (event.target.className === 'basket-window') {
       this.visibleBasket = false;
     }

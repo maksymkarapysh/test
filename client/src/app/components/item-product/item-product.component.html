@@ -2,7 +2,7 @@
 <div class="container same-container" *ngIf="currentProduct">
   <div class="row nav-in-same-page">
       <div class="col-md-6">
-          <a routerLink="/">Главная</a> /  <a routerLink="/store">МАГАЗИН</a> / <a href="classic500.html" class="lastA">Арахісова паста Классическая 500г</a>
+          <a routerLink="/">Главная</a> /  <a routerLink="/store">МАГАЗИН</a> / <a (click)="linkOnMyself()" class="lastA">{{currentProduct?.name}}</a>
       </div>
       <div class="col-md-6 right" >
       <a  ><span class="glyphicon glyphicon-chevron-left glyph"></span> Назад</a> | <a >Вперед <span class="glyphicon glyphicon-chevron-right glyph"></span></a> 
