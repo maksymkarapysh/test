@@ -1,37 +1,63 @@
-<div class="basket-window" >
-  <div class="basket-window-fix">
-      <div class="basket-window-fix-header">
-          <i class="glyphicon glyphicon-chevron-right close-basket" (click)="closeBasket()"></i><span>Кошик</span>
-      </div>
+<div class="container basketWrap table-responsive">
 
-      <div class="container-fluid product">
-          <div class="row block-with-product" *ngFor="let order of orders">
-              <div class="col-md-5 col-sm-5 col-xs-5">
-                  <a href="classic500.html"> <img src="http://localhost:3000/{{order.product.productImage}}" alt="Alternate Text" /></a>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-6 item-info">
-                  <p class="item-name">{{order.product.name}}</p>
-                  <p class="item-quantity">КОЛИЧЕСТВО: {{order.quantity}}</p>
-                  <p class="item-price">₴ {{order.product.price * order.quantity }}</p>
-              </div>
-              <div>
-                  <i class="glyphicon glyphicon-remove" (click)="deleteItemOrder(order)"></i>
-              </div>
-          </div>
+	<table class="table basket">
+		<caption class="basket__caption">Кошик ({{quantityOrders}})</caption>
+		<tr class="basket__header">
+			<td>ТОВАР</td>
+			<td>НАИМЕНОВАНИЕ</td>
+			<td>КОЛИЧЕСТВО</td>
+			<td class="text-right">ИТОГО</td>
+		</tr>
+		<tr *ngFor="let order of orders" class="product">
+			<td>
+				<a href="classic500.html">
+					<img class="product__image" src="http://localhost:3000/{{order.product.productImage}}" alt="Alternate Text" />
+				</a>
+			</td>
+			<td>
+				<p class="product__info-name">{{order.product.name}}</p>
+				<p class="product__info-artical">Артикул: 0001 (fix it)</p>
+				<p class="product__info-price">Цена: {{order.product.price}}</p>
+			</td>
+			<td>
+				<div class="product__quantityWrap">
+					<a href="#" class="glyphicon glyphicon-minus minus"></a>
+					<input type="number" min="1" name="name" class="product-quantity-input" value="1" />
+					<a href="#" class="glyphicon glyphicon-plus plus"></a>
+				</div>
+			</td>
+			<td class="text-right">
+				<p>₴<span>{{order.quantity * order.product.price}}</span>
+				</p>
+			</td>
+		</tr>
+		<tr class="additionalInfo">
+			<td colspan="2">
+				<div class="additionalInfo__icon">
+					<i class="glyphicon glyphicon-envelope"></i> 
+					Додати коментар
+				</div>
+				<div class="additionalInfo__form-comment">
+					<form>
+						<textarea maxlength="250" placeholder="Маєте особливі побажання? Пишіть тут:)"></textarea>
+						<button>Отменить</button>
+						<button class="done">Готово</button>
+					</form>
+				</div>
+			</td>
+			<td colspan="2" class="additionalInfo__sum text-right">
+				<p class="dditionalInfo__sum-totalPrice">Сумма: {{sumPrice}}</p>
+				<p class="dditionalInfo__sum-userInfo">Знижки, податки та вартість доставки будуть розраховані при оформленні замовлення.</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="text-right">
+					<a class="link btn btn-default btn-lg">Оформити замовлення</a>
+			</td>
+		</tr>
+	</table>
 
-          <div class="basket-window-fix-footer">
-              <div class="basket-footer-summary">
-                  <p>Сумма</p>
-                  <p>₴{{sumPrice}}</p>
-              </div>
-              <div class="row basket-footer-anchor">
-                  <div class="col-md-6 col-md-offset-3 text-center">
-                      <a href="basket.html" class="btn btn-default btn-lg">Перейти до кошику</a>
-                  </div>
-              </div>
-          </div>
-
-      </div>
-
-  </div>
 </div>
+
+
+<nut-footer></nut-footer>

@@ -15,8 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './shared/product.service';
 import { StoreComponent } from './components/store/store.component';
 import { ItemProductComponent } from './components/item-product/item-product.component';
-import { BasketComponent } from './components/basket/basket.component';
+import { BasketWindowComponent } from './components/basket-window/basket-window.component';
 import { BasketService } from './shared/basket.service';
+import { BasketComponent } from './components/basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BasketService } from './shared/basket.service';
     AboutUsComponent,
     StoreComponent,
     ItemProductComponent,
+    BasketWindowComponent,
     BasketComponent
   ],
   imports: [

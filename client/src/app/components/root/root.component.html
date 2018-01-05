@@ -5,4 +5,4 @@
 
 <nut-sticky-header (makeVisibleBasket)="toggleBasket($event)"></nut-sticky-header> 
 
-<nut-basket *ngIf="visibleBasket"  (hideBasket)="toggleBasket($event)" ></nut-basket>
+<nut-basket-window *ngIf="visibleBasket"  (hideBasket)="toggleBasket($event)"> </nut-basket-window>
