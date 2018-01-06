@@ -21,7 +21,7 @@
 .product {
     &__image {
         border:1px solid #fff;
-        width:80%;  
+        width:90%;  
         height:18vw; 
     }
     &__info {
@@ -49,6 +49,14 @@
             width: 35px;
             height: 35px;
         }
+    }
+
+    &__imageWrap {
+        width: 35%;
+    }
+
+    &__descriptionWrap, &__quantityWrapper {
+        width: 30%;
     }
 }
 

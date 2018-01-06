@@ -27,7 +27,7 @@
  }
 
 
- .same-bought a {
+ .same-bought button {
     background-color:rgba(202, 229, 175, 0.5);
     border:none;
     color:rgba(255, 255, 255,0.8);
@@ -38,7 +38,7 @@
     
 }
 
-.same-bought a:hover {
+.same-bought button:hover {
     background-color:rgba(202, 229, 175, 0.2);
     color:rgba(255, 255, 255,0.3);
 }

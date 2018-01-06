@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from '../../shared/basket.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nut-basket',
@@ -12,7 +13,7 @@ export class BasketComponent implements OnInit {
   private sumPrice: number = 0;
   private quantityOrders:number = 0;
 
-  constructor(private basketService: BasketService) { }
+  constructor(private basketService: BasketService,private router: Router ) { }
 
   ngOnInit() {
     this.getOrders();
@@ -28,5 +29,9 @@ export class BasketComponent implements OnInit {
       });
 
     })
+  }
+
+  private goToItemProduct(order)  {
+    this.router.navigate(["item", order.product._id] )
   }
 }

@@ -14,14 +14,15 @@ export class StickyHeaderComponent implements OnInit {
 
   constructor(private router: Router, private basketService: BasketService) {
     this.quantityOrders = 0;
+    this.basketService.subject.subscribe(() => this.getQuintityOrders())
    }
 
   ngOnInit() {
-  
+    this.getQuintityOrders();
   }
   ngOnChanges() {
     console.log('after cont checked');
-     this.getQuintityOrders();
+     //this.getQuintityOrders();
   }
 
   private redirectToMainPage() {

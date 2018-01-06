@@ -14,10 +14,4 @@ export class RootComponent {
   toggleBasket(visible) {
     this.visibleBasket = visible;
   }
-
-  closeBasket(event) {
-    if (event.target.className === 'basket-window') {
-      this.visibleBasket = false;
-    }
-  }
  }

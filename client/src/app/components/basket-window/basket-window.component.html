@@ -1,36 +1,36 @@
-<div class="basket-window" >
-  <div class="basket-window-fix">
-      <div class="basket-window-fix-header">
-          <i class="glyphicon glyphicon-chevron-right close-basket" (click)="closeBasket()"></i><span>Кошик</span>
-      </div>
 
-      <div class="container-fluid product">
-          <div class="row block-with-product" *ngFor="let order of orders">
-              <div class="col-md-5 col-sm-5 col-xs-5">
-                  <a href="classic500.html"> <img src="http://localhost:3000/{{order.product.productImage}}" alt="Alternate Text" /></a>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-6 item-info">
-                  <p class="item-name">{{order.product.name}}</p>
-                  <p class="item-quantity">КОЛИЧЕСТВО: {{order.quantity}}</p>
-                  <p class="item-price">₴ {{order.product.price * order.quantity }}</p>
-              </div>
-              <div>
-                  <i class="glyphicon glyphicon-remove" (click)="deleteItemOrder(order)"></i>
-              </div>
-          </div>
+<div class="basketWindow" (click)="closedBasket($event)">
+    <div class="basketWindow-fix">
+        <div class="basketWindow__header">
+            <i class="glyphicon glyphicon-chevron-right close-basket" (click)="closeBasket()"></i>
+            <span>Кошик</span>
+        </div>
+        <div class="basketWindow__main">
+            <table class="basketWindow__productsWrap">
+                <tr class="basketWindow__productsWrap_item" *ngFor="let order of orders">
+                    <td class="basketWindow__productsWrap_item-image">
+                        <a (click)='goToItemProduct(order)' style="cursor:pointer" > <img src="http://localhost:3000/{{order.product.productImage}}" alt="Alternate Text" /></a>
+                    </td>
+                    <td class="basketWindow__productsWrap_item-describe">
+                        <p class="basketWindow__productsWrap_item-describe-name">{{order.product.name}}</p>
+                        <p class="basketWindow__productsWrap_item-describe-quantity">КОЛИЧЕСТВО: {{order.quantity}}</p>
+                        <p class="basketWindow__productsWrap_item-describe-price">₴ {{order.product.price * order.quantity }}</p>
+                    </td>
+                    <td class="basketWindow__productsWrap_item-remove">
+                        <i class="glyphicon glyphicon-remove" (click)="deleteItemOrder(order)"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="basketWindow__footer">
+            <div class="basketWindow__footer-summary">
+                <p>Сумма </p>
+                <p>₴{{sumPrice}}</p>
+            </div>
+            <div class="basketWindow__footer-anchor">
+                <button (click)="redirectToBasketPage()" class="btn btn-default btn-lg">Перейти до кошику</button>
+            </div>
+        </div>
 
-          <div class="basket-window-fix-footer">
-              <div class="basket-footer-summary">
-                  <p>Сумма ; ₴{{sumPrice}}</p>
-              </div>
-              <div class="row basket-footer-anchor">
-                  <div class="col-md-6 col-md-offset-3 text-center">
-                      <a (click)="redirectToBasketPage()" class="btn btn-default btn-lg">Перейти до кошику</a>
-                  </div>
-              </div>
-          </div>
-
-      </div>
-
-  </div>
+    </div>
 </div>
