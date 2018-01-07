@@ -1,0 +1,33 @@
+.fix-icons {
+    position: fixed;
+    right: 15px;
+    top:50%;
+    transform: translateY(-50%);
+    width: 47px;
+    height: 175px;
+    border-radius:10px 10px 10px 10px;
+    background-color:rgba(0,0,0,0.5);
+}
+.fix-icons ul li {
+    list-style:none;
+    margin-top:10px;
+    height:43px;
+    width:43px;
+    }
+
+    .fix-icons ul li a i {
+        height:43px;
+    width:43px;
+    display:block;
+    }
+    .fix-icons ul li i.vk-fix {
+        background-image: url('../../../assets/images/icons/vk-aside.png');
+    }
+
+    .fix-icons ul li i.insta-fix {
+        background-image: url('../../../assets/images/icons/insta-aside.png');
+    }
+
+    .fix-icons ul li i.fb-fix {
+        background-image: url('../../../assets/images/icons/fb-aside.png');
+    }

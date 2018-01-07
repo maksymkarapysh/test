@@ -18,6 +18,7 @@ import { ItemProductComponent } from './components/item-product/item-product.com
 import { BasketWindowComponent } from './components/basket-window/basket-window.component';
 import { BasketService } from './shared/basket.service';
 import { BasketComponent } from './components/basket/basket.component';
+import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BasketComponent } from './components/basket/basket.component';
     StoreComponent,
     ItemProductComponent,
     BasketWindowComponent,
-    BasketComponent
+    BasketComponent,
+    SidebarNavigationComponent
   ],
   imports: [
     BrowserModule,
