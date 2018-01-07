@@ -3,9 +3,9 @@
     <h2 (click)='redirectToMainPage()' class="header__logo">~ NUTTY NUT ~</h2>
  
   <nav class="header__navigation">
-      <li><a href="main#main" pageScroll [pageScrollSpeed]="200" >Про нас</a></li>
+      <li><a href="#main" pageScroll [routerLink]="['/main']"  >Про нас</a></li>
       <li><a routerLink="store">Магазин</a></li>
-      <li><a href="#footer">Контакты</a></li>
+      <li><a href="#footer" pageScroll [routerLink]="['/main']">Контакты</a></li>
   </nav>
 
   <svg xmlns="http://www.w3.org/2000/svg" 

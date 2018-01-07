@@ -6,7 +6,6 @@
 
 .same-container {
     width:65%;
-    
     background-color:rgba(0,0,0,0.5);
 }
 
@@ -15,7 +14,6 @@
     width:100%;
 }
  .same-bought p {
-   
     color:#E8E6E6;
     font: normal normal normal 38px/47px "Open Sans Condensed",sans-serif;
     margin-bottom:5%;
@@ -26,26 +24,20 @@
      font: normal normal normal 19px/23px "Open Sans Condensed",sans-serif;
  }
 
-
  .same-bought button {
     background-color:rgba(202, 229, 175, 0.5);
     border:none;
     color:rgba(255, 255, 255,0.8);
     padding:4% 10%;
     display:inline-block;
-    margin:0 auto;
-    
-    
+    margin:0 auto;   
 }
 
 .same-bought button:hover {
     background-color:rgba(202, 229, 175, 0.2);
     color:rgba(255, 255, 255,0.3);
 }
-
-
 .desc p{
-
     margin-top:30px;
     color: #E8E6E6;
     font: normal normal normal 25px/31px "Open Sans Condensed",sans-serif;
