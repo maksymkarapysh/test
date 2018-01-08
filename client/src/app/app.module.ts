@@ -19,6 +19,15 @@ import { BasketWindowComponent } from './components/basket-window/basket-window.
 import { BasketService } from './shared/basket.service';
 import { BasketComponent } from './components/basket/basket.component';
 import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+
+
+// ********************** angular-modal-gallery *****************************
+import 'hammerjs'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save hammerjs`)
+import 'mousetrap'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save mousetrap`)
+import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------- angular-modal-gallery library import
+// **************************************************************************
+
 
 @NgModule({
   declarations: [
@@ -32,13 +41,15 @@ import { SidebarNavigationComponent } from './components/sidebar-navigation/side
     ItemProductComponent,
     BasketWindowComponent,
     BasketComponent,
-    SidebarNavigationComponent
+    SidebarNavigationComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    ModalGalleryModule.forRoot()
   ],
   providers: [ProductService, BasketService],
   bootstrap: [RootComponent]

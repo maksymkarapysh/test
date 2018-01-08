@@ -1,0 +1,46 @@
+.ng-gallery {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  & > div {
+    width: 24.5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 1px;
+
+    img {
+      filter: none; /* IE6-9 */ 
+      -webkit-filter: grayscale(0);
+      background-color: #fff;  
+      height: 250px !important;
+      width: 100%;
+      &:hover {
+      filter: gray; /* IE6-9 */ 
+      -webkit-filter: grayscale(1); 
+      }
+    }
+  }
+}
+
+.ng-gallery-content > span.info-text {
+  display: none !important;
+}
+
+.ng-gallery-content  img {
+  max-height: calc(100% - 70px) !important;
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+
+  .ng-gallery > div {
+      width: 33%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .ng-gallery > div {
+      width: 25%;
+  }
+}
