@@ -21,6 +21,7 @@ import { BasketComponent } from './components/basket/basket.component';
 import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 
+import { FeedbackService } from './shared/feedback.service';
 
 // ********************** angular-modal-gallery *****************************
 import 'hammerjs'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save hammerjs`)
@@ -51,7 +52,7 @@ import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------
     NgxPageScrollModule,
     ModalGalleryModule.forRoot()
   ],
-  providers: [ProductService, BasketService],
+  providers: [ProductService, BasketService, FeedbackService],
   bootstrap: [RootComponent]
 })
 export class AppModule { }

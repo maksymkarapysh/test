@@ -16,18 +16,19 @@
               Маєте ідеї, питання чи пропозиції?
               <br /> Пишіть нам!
           </p>
-          <form action="/" method="get">
+          <form>
+          <!-- <form (ngSubmit)="sendData(name,email,subject,message)" > -->
               <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-6 ">
-                      <input type="text" name="name" placeholder="Ім'я" />
-                      <input type="email" name="email" placeholder="Email" />
-                      <input type="text" name="subject" placeholder="Тема" />
+                      <input type="text" name="name" placeholder="Ім'я" #name />
+                      <input type="email" name="email" placeholder="Email" #email />
+                      <input type="text" name="subject" placeholder="Тема" #subject />
                       <span></span>
                   </div>
 
                   <div class="col-md-6 col-sm-6 col-xs-6">
-                      <textarea placeholder="Повідомлення"></textarea>
-                      <input type="submit" class="btn" value="Відправити" />
+                      <textarea placeholder="Повідомлення" #message></textarea>
+                      <input type="button" (click)="sendData(name.value,email.value,subject.value,message.value)"  class="btn" value="Відправити" />
                   </div>
               </div>
           </form>
