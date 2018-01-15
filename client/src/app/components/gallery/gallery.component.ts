@@ -16,8 +16,8 @@ export class GalleryComponent implements OnInit {
     new Image('../assets/images/gallery/0041.jpg'),
     new Image('../assets/images/gallery/0051.jpg'),
     new Image('../assets/images/bg-main.jpg'),
-    new Image('../assets/images/gallery/0071.jpg'),
-    new Image('../assets/images/gallery/0081.jpg'),
+    new Image('../assets/images/bg-read-more.jpg'),
+    new Image('../assets/images/gallery/0021.jpg'),
   ];
   
   constructor() { }
