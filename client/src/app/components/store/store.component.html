@@ -6,7 +6,7 @@
   <div class="row">
       <div *ngFor="let product of products" class="col-md-4 col-sm-6 col-xs-6  bought">
          <a (click)='goToItemProduct(product)'>
-             <img src="http://localhost:3000/{{product.productImage}}" alt="...">
+             <img src="{{product.productImage}}" alt="...">
              <p class="text-center">{{product.name}}</p>
              <p class="text-center">₴{{product.price}}</p>
          </a>

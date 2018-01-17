@@ -66,7 +66,7 @@ export class ProductCreateEditComponent implements OnInit {
             console.log(product)
             //this.currentProduct = product;
             var ImageOfProduct = new Image();
-            ImageOfProduct.src = 'http://localhost:3000/' + product.productImage;
+            ImageOfProduct.src = product.productImage;
             this.productForm.get('name').setValue(product.name);
             this.productForm.get('price').setValue(product.price);
             this.productForm.get('productImage').setValue(ImageOfProduct);

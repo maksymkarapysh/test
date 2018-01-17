@@ -44,12 +44,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', upload.single('productImage'), (req, res, next) => {
-    //console.log(req.file)
     const product = new Product({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         price: req.body.price,
-        productImage: req.file.path
+        productImage: 'http://localhost:3000/' +  req.file.path
     });
     product.save()
         .then((result) => {
