@@ -16,7 +16,7 @@ import { ProductService } from './shared/product.service';
 import { StoreComponent } from './components/store/store.component';
 import { ItemProductComponent } from './components/item-product/item-product.component';
 import { BasketWindowComponent } from './components/basket-window/basket-window.component';
-import { BasketService } from './shared/basket.service';
+import { CartService } from './shared/cart.service';
 import { BasketComponent } from './components/basket/basket.component';
 import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
@@ -52,7 +52,7 @@ import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------
     NgxPageScrollModule,
     ModalGalleryModule.forRoot()
   ],
-  providers: [ProductService, BasketService, FeedbackService],
+  providers: [ProductService, CartService, FeedbackService],
   bootstrap: [RootComponent]
 })
 export class AppModule { }

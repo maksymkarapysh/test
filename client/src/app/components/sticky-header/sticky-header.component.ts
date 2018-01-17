@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, AfterViewChecked, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { BasketService } from '../../shared/basket.service';
+import { CartService } from '../../shared/cart.service';
 
 @Component({
   selector: 'nut-sticky-header',
@@ -12,9 +12,9 @@ export class StickyHeaderComponent implements OnInit {
   @Output() makeVisibleBasket = new EventEmitter<any>();
   private quantityOrders: number;
 
-  constructor(private router: Router, private basketService: BasketService) {
+  constructor(private router: Router, private cartService: CartService) {
     this.quantityOrders = 0;
-    this.basketService.subject.subscribe(() => this.getQuintityOrders())
+    this.cartService.subject.subscribe(() => this.getQuintityOrders())
    }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class StickyHeaderComponent implements OnInit {
   }
 
   getQuintityOrders() {
-    this.basketService.getOrders().subscribe(quantity => { this.quantityOrders = (<any>quantity).length});
+    this.cartService.getOrders().subscribe(quantity => { this.quantityOrders = (<any>quantity).length});
   }
 
   private openBasket() {

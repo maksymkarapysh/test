@@ -9,12 +9,12 @@
             <table class="basketWindow__productsWrap">
                 <tr class="basketWindow__productsWrap_item" *ngFor="let order of orders">
                     <td class="basketWindow__productsWrap_item-image">
-                        <a (click)='goToItemProduct(order)' style="cursor:pointer" > <img src="{{order.product.productImage}}" alt="Alternate Text" /></a>
+                        <a (click)='goToItemProduct(order)' style="cursor:pointer" > <img src="{{order.productImage}}" alt="Alternate Text" /></a>
                     </td>
                     <td class="basketWindow__productsWrap_item-describe">
-                        <p class="basketWindow__productsWrap_item-describe-name">{{order.product.name}}</p>
+                        <p class="basketWindow__productsWrap_item-describe-name">{{order.name}}</p>
                         <p class="basketWindow__productsWrap_item-describe-quantity">КОЛИЧЕСТВО: {{order.quantity}}</p>
-                        <p class="basketWindow__productsWrap_item-describe-price">₴ {{order.product.price * order.quantity }}</p>
+                        <p class="basketWindow__productsWrap_item-describe-price">₴ {{order.price * order.quantity }}</p>
                     </td>
                     <td class="basketWindow__productsWrap_item-remove">
                         <i class="glyphicon glyphicon-remove" (click)="deleteItemOrder(order)"></i>

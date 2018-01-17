@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, DoCheck, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { BasketService } from '../../shared/basket.service';
+import { CartService } from '../../shared/cart.service';
 
 @Component({
     selector: 'nut-basket-window',
@@ -13,7 +13,7 @@ export class BasketWindowComponent implements OnInit, DoCheck {
     @Output() hideBasket: EventEmitter<any> = new EventEmitter();
     private orders;
     private sumPrice: number = 0;
-    constructor(private basketService: BasketService, private router: Router) { }
+    constructor(private cartService: CartService, private router: Router) { }
 
     ngOnInit() {
         this.getOrders();
@@ -35,18 +35,19 @@ export class BasketWindowComponent implements OnInit, DoCheck {
 
     private getOrders() {
 
-        this.basketService.getOrders().subscribe((getAllOrders) => {
+        this.cartService.getOrders().subscribe((getAllOrders) => {
             this.orders = getAllOrders;
+            console.log(this.orders);
             this.sumPrice = 0;
             this.orders.forEach((item) => {
-                this.sumPrice += item.quantity * item.product.price;
+                this.sumPrice += item.quantity * item.price;
             })
         }, (err) => console.log(err))
     }
 
     private deleteItemOrder(itemOrder) {
-        this.basketService.deleteItemOrder(itemOrder).subscribe(() => {
-            this.basketService.subject.next();
+        this.cartService.deleteItemOrder(itemOrder).subscribe(() => {
+            this.cartService.subject.next();
             this.getOrders();
         })
     }
@@ -57,7 +58,7 @@ export class BasketWindowComponent implements OnInit, DoCheck {
     }
 
     private goToItemProduct(order) {
-        this.router.navigate(["item", order.product._id])
+        this.router.navigate(["item", order._id])
         this.closeBasket();
     }
 }

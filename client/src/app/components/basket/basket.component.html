@@ -11,23 +11,23 @@
 		<tr *ngFor="let order of orders" class="product">
 			<td class="product__imageWrap">
 				<a (click)='goToItemProduct(order)' style="cursor:pointer">
-					<img class="product__image" src="{{order.product.productImage}}" alt="Alternate Text" />
+					<img class="product__image" src="{{order.productImage}}" alt="Alternate Text" />
 				</a>
 			</td>
 			<td class="product__descriptionWrap">
-				<p class="product__info-name">{{order.product.name}}</p>
+				<p class="product__info-name">{{order.name}}</p>
 				<p class="product__info-artical">Артикул: 0001 (fix it)</p>
-				<p class="product__info-price">Цена: {{order.product.price}}</p>
+				<p class="product__info-price">Цена: {{order.price}}</p>
 			</td>
 			<td class="product__quantityWrapper">
 				<div class="product__quantityWrap">
-					<a href="#" class="glyphicon glyphicon-minus minus"></a>
-					<input type="number" min="1" name="name" class="product-quantity-input" value="1" />
-					<a href="#" class="glyphicon glyphicon-plus plus"></a>
+					<a class="glyphicon glyphicon-minus minus" (click)="changeQuantityItem(order,'minus')"></a>
+					<input type="number" min="1" max="99" name="name" class="product-quantity-input" value="{{order.quantity}}" #quantity (change)="changeQuantityItem(order,quantity.value)" />
+					<a  class="glyphicon glyphicon-plus plus" (click)="changeQuantityItem(order,'plus')"></a>
 				</div>
 			</td>
 			<td class="text-right">
-				<p>₴<span>{{order.quantity * order.product.price}}</span>
+				<p>₴<span>{{order.quantity * order.price}}</span>
 				</p>
 			</td>
 		</tr>

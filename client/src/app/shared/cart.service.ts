@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
-export class BasketService {
+export class CartService {
 
   private ordersInCart: Array<any>;
   public subject = new Subject()
@@ -23,7 +23,15 @@ export class BasketService {
   }
 
   public addToOrders(product) {
-    this.ordersInCart.push(product);
+    if (this.ordersInCart.some((item) => item._id == product._id)) {
+      this.ordersInCart.forEach(item => {
+        if (item._id == product._id) {
+          item.quantity += 1;
+        }
+      });
+    } else {
+      this.ordersInCart.push(product);
+    }
     localStorage.setItem('cart', JSON.stringify(this.ordersInCart));
 
     return new Observable((observer) => {
@@ -34,7 +42,7 @@ export class BasketService {
 
   public deleteItemOrder(itemOrder): Observable<{}> {
 
-    this.ordersInCart = this.ordersInCart.filter(item => item.product._id != itemOrder.product._id);  // TODO: all prod delete in cart which have same _id
+    this.ordersInCart = this.ordersInCart.filter(item => item._id != itemOrder._id); 
 
     return Observable.create((observer) => {
       observer.next(localStorage.setItem('cart', JSON.stringify(this.ordersInCart)));

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../shared/product';
 import { ProductService } from '../../shared/product.service';
-import { BasketService } from '../../shared/basket.service';
+import { CartService } from '../../shared/cart.service';
 
 @Component({
   selector: 'nut-item-product',
@@ -13,14 +13,13 @@ export class ItemProductComponent implements OnInit {
 
   public currentProduct: Product;
 
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private router: Router, private basketService: BasketService) { }
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private router: Router, private cartService: CartService) { }
 
   public ngOnInit() {
     let id = this.activatedRoute.snapshot.params["id"];
 
     this.productService.getProduct(id).subscribe(getProduct => {
       this.currentProduct = getProduct;
-      console.log(this.currentProduct)
     })
   }
 
@@ -30,11 +29,11 @@ export class ItemProductComponent implements OnInit {
 
   addToBasket(product) {
     let order = {
-      product,
+      ...product,
       quantity: 1
-    }
-    this.basketService.addToOrders(order).subscribe(() => {
-      this.basketService.subject.next(); // to update basket count of Orders
+    };
+    this.cartService.addToOrders(order).subscribe(() => {
+      this.cartService.subject.next(); // to update basket count of Orders
     })
   }
 }
