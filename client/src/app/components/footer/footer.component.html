@@ -1,44 +1,52 @@
-
 <div class="footer">
-  <div class="row">
-      <div class="col-md-3 text-center">
-          <p class="firstP">Контакты</p>
-          <p>Email: <a href="mailto:nuttynut.ua@gmail.com"> nuttynut.ua@gmail.com</a></p>
-          <p>  тел.     +380 97 008 46 45</p>
-      </div>
-      <div class="col-md-3 text-center">
-          <p class="firstP">Ми працюємо </p>
-          <p>Щоденно</p>
-          <p>10.00 - 22.00</p>
-      </div>
-      <div class="col-md-6 text-center">
-          <p class="lastP">
-              Маєте ідеї, питання чи пропозиції?
-              <br /> Пишіть нам!
-          </p>
-          <form>
-          <!-- <form (ngSubmit)="sendData(name,email,subject,message)" > -->
-              <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6 ">
-                      <input type="text" name="name" placeholder="Ім'я" #name />
-                      <input type="email" name="email" placeholder="Email" #email />
-                      <input type="text" name="subject" placeholder="Тема" #subject />
-                      <span></span>
-                  </div>
+    <div class="row">
+        <div class="col-md-3 text-center">
+            <p class="firstP">Контакты</p>
+            <p>Email:
+                <a href="mailto:nuttynut.ua@gmail.com"> nuttynut.ua@gmail.com</a>
+            </p>
+            <p> тел. +380 97 008 46 45</p>
+        </div>
+        <div class="col-md-3 text-center">
+            <p class="firstP">Ми працюємо </p>
+            <p>Щоденно</p>
+            <p>10.00 - 22.00</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <p class="lastP">
+                Маєте ідеї, питання чи пропозиції?
+                <br /> Пишіть нам!
+            </p>
+            <form>
+                <!-- <form (ngSubmit)="sendData(name,email,subject,message)" > -->
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6 ">
+                        <input type="text" name="name" placeholder="Ім'я" #name />
+                        <input type="email" name="email" placeholder="Email" #email />
+                        <input type="text" name="subject" placeholder="Тема" #subject />
+                        <span></span>
+                    </div>
 
-                  <div class="col-md-6 col-sm-6 col-xs-6">
-                      <textarea placeholder="Повідомлення" #message></textarea>
-                      <input type="button" (click)="sendData(name.value,email.value,subject.value,message.value)"  class="btn" value="Відправити" />
-                  </div>
-              </div>
-          </form>
-      </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <textarea placeholder="Повідомлення" #message></textarea>
+                        <input type="button" (click)="sendData(name.value,email.value,subject.value,message.value)" class="btn" value="Відправити"
+                        />
+                    </div>
+                </div>
+            </form>
+        </div>
 
-      <h3 class="text-center">Слідкуйте за нами у соціальних мережах</h3>
-      <p class="text-center">
-          <a href="https://vk.com/nuttynut_ua"><i class="vk"></i></a>
-          <a href="https://www.instagram.com/nuttynut_ua/"><i class="insta"></i></a>
-          <a href="https://www.facebook.com/nuttynutua/"><i class="fb"></i></a>
-      </p>
-  </div>
+        <h3 class="text-center">Слідкуйте за нами у соціальних мережах</h3>
+        <p class="text-center">
+            <a href="https://vk.com/nuttynut_ua">
+                <i class="vk"></i>
+            </a>
+            <a href="https://www.instagram.com/nuttynut_ua/">
+                <i class="insta"></i>
+            </a>
+            <a href="https://www.facebook.com/nuttynutua/">
+                <i class="fb"></i>
+            </a>
+        </p>
+    </div>
 </div>

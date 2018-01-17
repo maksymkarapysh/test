@@ -3,28 +3,28 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FeedbackService } from '../../shared/feedback.service';
 
 @Component({
-  selector: 'nut-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+	selector: 'nut-footer',
+	templateUrl: './footer.component.html',
+	styleUrls: ['./footer.component.scss'],
 
 })
 export class FooterComponent implements OnInit {
 
-  feedbackForm : FormGroup;
+	feedbackForm: FormGroup;
 
-  constructor( private feedbackService: FeedbackService) { }
+	constructor(private feedbackService: FeedbackService) { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
-  private sendData(name,email,subject,message ) {
-    let data = {
-       name,
-       email,
-       subject,
-       message
-     };
-    
-    this.feedbackService.sendMessage(data).subscribe(() => console.log('send data'));
-  }
+	private sendData(name, email, subject, message) {
+		let data = {
+			name,
+			email,
+			subject,
+			message
+		};
+
+		this.feedbackService.sendMessage(data).subscribe(() => console.log('send data'));
+	}
 }

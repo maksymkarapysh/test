@@ -1,4 +1,3 @@
-
 <div class="basketWindow" (click)="closedBasket($event)">
     <div class="basketWindow-fix">
         <div class="basketWindow__header">
@@ -9,7 +8,9 @@
             <table class="basketWindow__productsWrap">
                 <tr class="basketWindow__productsWrap_item" *ngFor="let order of orders">
                     <td class="basketWindow__productsWrap_item-image">
-                        <a (click)='goToItemProduct(order)' style="cursor:pointer" > <img src="{{order.productImage}}" alt="Alternate Text" /></a>
+                        <a (click)='goToItemProduct(order)' style="cursor:pointer">
+                            <img src="{{order.productImage}}" alt="Alternate Text" />
+                        </a>
                     </td>
                     <td class="basketWindow__productsWrap_item-describe">
                         <p class="basketWindow__productsWrap_item-describe-name">{{order.name}}</p>

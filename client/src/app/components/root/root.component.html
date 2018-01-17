@@ -3,8 +3,8 @@
 <router-outlet></router-outlet>
 
 
-<nut-sticky-header (makeVisibleBasket)="toggleBasket($event)"></nut-sticky-header> 
+<nut-sticky-header (makeVisibleBasket)="toggleBasket($event)"></nut-sticky-header>
 
 <nut-sidebar-navigation *ngIf="!visibleBasket"></nut-sidebar-navigation>
 
-<nut-basket-window *ngIf="visibleBasket"  (hideBasket)="toggleBasket($event)"> </nut-basket-window>
+<nut-basket-window *ngIf="visibleBasket" (hideBasket)="toggleBasket($event)"> </nut-basket-window>

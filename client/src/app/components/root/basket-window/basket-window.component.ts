@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, DoCheck, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { CartService } from '../../shared/cart.service';
+import { CartService } from '../../../shared/cart.service';
 
 @Component({
     selector: 'nut-basket-window',

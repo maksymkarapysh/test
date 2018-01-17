@@ -22,19 +22,21 @@
 			<td class="product__quantityWrapper">
 				<div class="product__quantityWrap">
 					<a class="glyphicon glyphicon-minus minus" (click)="changeQuantityItem(order,'minus')"></a>
-					<input type="number" min="1" max="99" name="name" class="product-quantity-input" value="{{order.quantity}}" #quantity (change)="changeQuantityItem(order,quantity.value)" />
-					<a  class="glyphicon glyphicon-plus plus" (click)="changeQuantityItem(order,'plus')"></a>
+					<input type="number" min="1" max="99" name="name" class="product-quantity-input" value="{{order.quantity}}" #quantity (change)="changeQuantityItem(order,quantity.value)"
+					/>
+					<a class="glyphicon glyphicon-plus plus" (click)="changeQuantityItem(order,'plus')"></a>
 				</div>
 			</td>
 			<td class="text-right">
-				<p>₴<span>{{order.quantity * order.price}}</span>
+				<p>₴
+					<span>{{order.quantity * order.price}}</span>
 				</p>
 			</td>
 		</tr>
 		<tr class="additionalInfo">
 			<td colspan="2">
 				<div class="additionalInfo__icon">
-					<i class="glyphicon glyphicon-envelope"></i> 
+					<i class="glyphicon glyphicon-envelope"></i>
 					Додати коментар
 				</div>
 				<div class="additionalInfo__form-comment">
@@ -52,7 +54,7 @@
 		</tr>
 		<tr>
 			<td colspan="4" class="text-right">
-					<a class="link btn btn-default btn-lg">Оформити замовлення</a>
+				<a class="link btn btn-default btn-lg">Оформити замовлення</a>
 			</td>
 		</tr>
 	</table>
