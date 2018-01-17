@@ -20,17 +20,13 @@ export class StickyHeaderComponent implements OnInit {
   ngOnInit() {
     this.getQuintityOrders();
   }
-  ngOnChanges() {
-    console.log('after cont checked');
-     //this.getQuintityOrders();
-  }
 
   private redirectToMainPage() {
     this.router.navigate(['']);
   }
 
   getQuintityOrders() {
-    this.basketService.getOrders().subscribe(quantity => { this.quantityOrders = quantity.count})
+    this.basketService.getOrders().subscribe(quantity => { this.quantityOrders = (<any>quantity).length});
   }
 
   private openBasket() {

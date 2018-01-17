@@ -7,24 +7,40 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class BasketService {
 
-  private urlConnectString: string;
+  private ordersInCart: Array<any>;
   public subject = new Subject()
   constructor(private http: HttpClient) {
-    this.urlConnectString = 'http://localhost:3000/orders'
+    this.ordersInCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+
   }
 
-  public getOrders(): Observable<any> {
-    return this.http.get(this.urlConnectString);
+  public getOrders(): Observable<{}> {
+    let orders: Observable<any> = Observable.create((observer) => {
+      observer.next(JSON.parse(localStorage.getItem('cart')));
+      observer.complete();
+    })
+    return orders;
   }
 
-  public addToOrders(product): Observable<any> {
-    return this.http.post(this.urlConnectString, product);
+  public addToOrders(product) {
+    this.ordersInCart.push(product);
+    localStorage.setItem('cart', JSON.stringify(this.ordersInCart));
+
+    return new Observable((observer) => {
+      observer.next();
+      observer.complete();
+    })
   }
 
-  public deleteItemOrder(itemOrder): Observable<any> {
-    return this.http.delete(this.urlConnectString + "/" + itemOrder._id)
+  public deleteItemOrder(itemOrder): Observable<{}> {
+
+    this.ordersInCart = this.ordersInCart.filter(item => item.product._id != itemOrder.product._id);  // TODO: all prod delete in cart which have same _id
+
+    return Observable.create((observer) => {
+      observer.next(localStorage.setItem('cart', JSON.stringify(this.ordersInCart)));
+      observer.complete();
+    })
   }
 
- 
 
 }

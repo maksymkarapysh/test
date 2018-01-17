@@ -22,8 +22,8 @@ export class BasketComponent implements OnInit {
   private getOrders() {
     this.basketService.getOrders().subscribe(getAllOrders => {
       
-      this.orders = getAllOrders.orders;
-      this.quantityOrders = getAllOrders.count
+      this.orders = getAllOrders;
+      this.quantityOrders = (getAllOrders as any).length
       this.orders.forEach(item => {
         this.sumPrice += item.quantity * item.product.price;
       });

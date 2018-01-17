@@ -12,7 +12,7 @@ import { BasketService } from '../../shared/basket.service';
 export class ItemProductComponent implements OnInit {
 
   public currentProduct: Product;
-  
+
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private router: Router, private basketService: BasketService) { }
 
   public ngOnInit() {
@@ -29,15 +29,13 @@ export class ItemProductComponent implements OnInit {
   }
 
   addToBasket(product) {
-    let order =  {
-      productId : product._id,
+    let order = {
+      product,
       quantity: 1
     }
     this.basketService.addToOrders(order).subscribe(() => {
       this.basketService.subject.next(); // to update basket count of Orders
-    });
-    
+    })
   }
-
 }
 

@@ -20,8 +20,6 @@ export class BasketWindowComponent implements OnInit, DoCheck {
     }
 
     ngDoCheck() {
-        // console.log(this.doVisibleBasket);
-        // this.getOrders();
     }
 
     public closeBasket() {
@@ -33,24 +31,24 @@ export class BasketWindowComponent implements OnInit, DoCheck {
             this.hideBasket.emit(false);
         }
     }
-    
+
 
     private getOrders() {
-        this.basketService.getOrders().subscribe(getAllOrders => {
-            this.orders = getAllOrders.orders;
-            this.sumPrice = 0;
-            this.orders.forEach(item => {
-                this.sumPrice += item.quantity * item.product.price;
-            });
 
-        })
+        this.basketService.getOrders().subscribe((getAllOrders) => {
+            this.orders = getAllOrders;
+            this.sumPrice = 0;
+            this.orders.forEach((item) => {
+                this.sumPrice += item.quantity * item.product.price;
+            })
+        }, (err) => console.log(err))
     }
 
     private deleteItemOrder(itemOrder) {
         this.basketService.deleteItemOrder(itemOrder).subscribe(() => {
             this.basketService.subject.next();
-            this.getOrders()    
-         });
+            this.getOrders();
+        })
     }
 
     private redirectToBasketPage() {
