@@ -17,17 +17,20 @@
 
     .fix-icons ul li a i {
         height:43px;
-    width:43px;
-    display:block;
+        width:43px;
+        display:block;
     }
     .fix-icons ul li i.vk-fix {
-        background-image: url('../../../../assets/images/icons/vk-aside.png');
+        background-image: url('../../../../assets/images/icons/social-sprites.svg');
+        background-position: 43px -39px;
     }
 
     .fix-icons ul li i.insta-fix {
-        background-image: url('../../../../assets/images/icons/insta-aside.png');
+        background-image: url('../../../../assets/images/icons/social-sprites.svg');
+        background-position: -42px -39px;
     }
 
     .fix-icons ul li i.fb-fix {
-        background-image: url('../../../../assets/images/icons/fb-aside.png');
+        background-image: url('../../../../assets/images/icons/social-sprites.svg');
+        background-position: 0px -39px;
     }

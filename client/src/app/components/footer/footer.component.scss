@@ -71,15 +71,18 @@
         display:inline-block;
 
         &.vk {
-            background-image: url('../../../assets/images/icons/vk-footer.png');
+            background-image: url('../../../assets/images/icons/social-sprites.svg');
+            background-position: 44px 0px;
         }
 
         &.insta {
-            background-image: url('../../../assets/images/icons/insta-footer.png');
+            background-image: url('../../../assets/images/icons/social-sprites.svg');
+            background-position: -41px 0px;
         }
 
         &.fb {
-            background-image: url('../../../assets/images/icons/fb-footer.png');
+            background-image: url('../../../assets/images/icons/social-sprites.svg');
+            background-position: 0px 0px;
         }
     }
 }
